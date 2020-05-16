@@ -4,6 +4,8 @@
 # include <cstdlib>
 # include <ctime>
 
+using namespace std;
+
 int main ( int argc, char *argv[] );
 void timestamp ( );
 
@@ -89,9 +91,9 @@ int main ( int argc, char *argv[] )
 
   if ( ierr != 0 )
   {
-    printf ( "\n" );
-    printf ( "MATVEC_MPI - Fatal error!\n" );
-    printf ( "  MPI_Init returns nonzero IERR.\n" );
+    cout << "\n";
+    cout << "MATVEC_MPI - Fatal error! \n";
+    cout << "  MPI_Init returns nonzero IERR.\n";
     exit ( 1 );
   }
 /*
@@ -106,18 +108,18 @@ int main ( int argc, char *argv[] )
   if ( my_id == 0 ) 
   {
     timestamp ( );
-    printf ( "\n" );
-    printf ( "MATVEC - Master process:\n" );
-    printf ( "  C version\n" );
-    printf ( "  An MPI example program to compute\n" );
-    printf ( "  a matrix-vector product b = A * x.\n" );
-    printf ( "\n" );
-    printf ( "  Compiled on %s at %s.\n", __DATE__, __TIME__ );
-    printf ( "\n" );
-    printf ( "  The number of processes is %d.\n", num_procs );
+    cout << "\n" );
+    cout << "MATVEC - Master process:\n";
+    cout << "  C version\n";
+    cout << "  An MPI example program to compute\n";
+    cout << "  a matrix-vector product b = A * x.\n";
+    cout << "\n";
+    cout << "  Compiled on "<< __DATE__ << " at " <<__TIME__ << ".\n";
+    cout << "\n";
+    cout << "  The number of processes is " << num_procs << ".\n";
   }
-  printf ( "\n" );
-  printf ( "Process %d is active.\n", my_id );
+  cout << "\n";
+  cout << "Process " << my_id << " is active.\n";
 
   m = 100;
   n = 50;
@@ -125,9 +127,9 @@ int main ( int argc, char *argv[] )
 
   if ( my_id == 0 ) 
   {
-    printf ( "\n" );
-    printf ( "  The number of rows is    %d.\n", m );
-    printf ( "  The number of columns is %d.\n", n );
+    cout << "\n" ;
+    cout << "  The number of rows is  " <<  m << ".\n";
+    cout << "  The number of columns is " << n << ".\n";
   }
 /*
   The master process allocates and initializes A and X.
@@ -163,13 +165,13 @@ int main ( int argc, char *argv[] )
         * sin ( ( double ) ( ( i + 1 ) * j_one ) * pi / ( double ) ( n + 1 ) );
     }
 
-    printf ( "\n" );
-    printf ( "MATVEC - Master process:\n" );
-    printf ( "  Vector x:\n" );
-    printf ( "\n" );
+    cout << "\n";
+    cout << "MATVEC - Master process:\n";
+    cout << "  Vector x:\n";
+    cout << "\n";
     for ( i = 0; i < n; i++ )
     {
-      printf ( "%d %f\n", i, x[i] );
+      cout << i << " " << x[i] << "\n";
     }
 
   }
@@ -268,7 +270,7 @@ int main ( int argc, char *argv[] )
 
       if ( tag == tag_done ) 
       {
-        printf ( "  Process %d shutting down.\n", my_id );
+        cout << "  Process " << my_id << "shutting down.\n";
         break;
       }
 
@@ -290,14 +292,14 @@ int main ( int argc, char *argv[] )
 */
   if ( my_id == master ) 
   {
-    printf ( "\n" );
-    printf ( "MATVEC - Master process:\n" );
-    printf ( "  Product vector b = A * x\n" );
-    printf ( "  (Should be zero, except for a 1 in entry %d)\n", j_one-1 );
-    printf ( "\n" );
+    cout << "\n";
+    cout << "MATVEC - Master process:\n";
+    cout << "  Product vector b = A * x\n";
+    cout << "  (Should be zero, except for a 1 in entry " << j_one-1 << ")\n";
+    cout << "\n";
     for ( i = 0; i < m; i++ )
     {
-      printf ( "%d %f\n", i, b[i] );
+      cout << i << " " << b[i] << "\n";
     }
 
     free ( b );
@@ -311,10 +313,10 @@ int main ( int argc, char *argv[] )
 */
   if ( my_id == master ) 
   {
-    printf ( "\n" );
-    printf ( "MATVEC - Master process:\n" );
-    printf ( "  Normal end of execution.\n" );
-    printf ( "\n" );
+    cout << "\n";
+    cout << "MATVEC - Master process:\n";
+    cout << "  Normal end of execution.\n";
+    cout << "\n";
     timestamp ( );
   }
   return 0;
@@ -361,7 +363,7 @@ void timestamp ( )
 
   strftime ( time_buffer, TIME_SIZE, "%d %B %Y %I:%M:%S %p", tm );
 
-  printf ( "%s\n", time_buffer );
+  cout << time_buffer << "\n";
 
   return;
 # undef TIME_SIZE
