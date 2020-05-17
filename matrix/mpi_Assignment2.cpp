@@ -92,7 +92,7 @@ int main ( int argc, char *argv[] )
   if ( ierr != 0 )
   {
     cout << "\n";
-    cout << "MATVEC_MPI - Fatal error! \n";
+    cout << "MATVEC_MPI - Fatal error!\n";
     cout << "  MPI_Init returns nonzero IERR.\n";
     exit ( 1 );
   }
@@ -108,27 +108,27 @@ int main ( int argc, char *argv[] )
   if ( my_id == 0 ) 
   {
     timestamp ( );
-    cout << "\n" );
+    cout << "\n";
     cout << "MATVEC - Master process:\n";
-    cout << "  C version\n";
+    cout << "  C++ version\n";
     cout << "  An MPI example program to compute\n";
     cout << "  a matrix-vector product b = A * x.\n";
     cout << "\n";
-    cout << "  Compiled on "<< __DATE__ << " at " <<__TIME__ << ".\n";
+    cout << "  Compiled on " << __DATE__ << " at " << __TIME__ << ".\n";
     cout << "\n";
-    cout << "  The number of processes is " << num_procs << ".\n";
+    cout << "  The number of processes is num_procs.\n";
   }
   cout << "\n";
   cout << "Process " << my_id << " is active.\n";
 
-  m = 100;
-  n = 50;
+  m = 4;
+  n = 4;
   tag_done = m + 1;
 
   if ( my_id == 0 ) 
   {
-    cout << "\n" ;
-    cout << "  The number of rows is  " <<  m << ".\n";
+    cout << "\n";
+    cout << "  The number of rows is " << m << ".\n";
     cout << "  The number of columns is " << n << ".\n";
   }
 /*
@@ -158,7 +158,7 @@ int main ( int argc, char *argv[] )
   The value of b will be zero, except that entry J_ONE will be 1.
   Pick any value of J_ONE between 1 and M.
 */
-    j_one = 17;
+    j_one = 2;
     for ( i = 0; i < n; i++ )
     {
       x[i] = sqrt ( 2.0 / ( double ) ( n + 1 ) ) 
@@ -270,7 +270,7 @@ int main ( int argc, char *argv[] )
 
       if ( tag == tag_done ) 
       {
-        cout << "  Process " << my_id << "shutting down.\n";
+        cout << "  Process " << my_id << " shutting down.\n";
         break;
       }
 
@@ -295,7 +295,7 @@ int main ( int argc, char *argv[] )
     cout << "\n";
     cout << "MATVEC - Master process:\n";
     cout << "  Product vector b = A * x\n";
-    cout << "  (Should be zero, except for a 1 in entry " << j_one-1 << ")\n";
+    cout << "  (Should be zero, except for a 1 in entry " << j_one-1 << "\n";
     cout << "\n";
     for ( i = 0; i < m; i++ )
     {

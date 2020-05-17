@@ -1,0 +1,49 @@
+17 May 2020 07:48:14 PM
+
+
+MATVEC - Master process:
+  C++ version
+  An MPI example program to compute
+  a matrix-vector product b = A * x.
+
+  Compiled on May 17 2020 at 19:48:10.
+
+  The number of processes is num_procs.
+
+Process 0 is active.
+
+  The number of rows is 4.
+  The number of columns is 4.
+
+MATVEC - Master process:
+  Vector x:
+
+0 0.601501
+1 0.371748
+2 -0.371748
+3 -0.601501
+
+Process 1 is active.
+
+Process 3 is active.
+Process 2 is active.
+
+  Process 1 shutting down.
+Process 4 is active.
+
+MATVEC - Master process:
+  Product vector b = A * x
+  (Should be zero, except for a 1 in entry 1
+
+0 -2.77556e-17
+1 1
+2 5.55112e-17
+3 -1.11022e-16
+  Process 3 shutting down.
+  Process 4 shutting down.
+  Process 2 shutting down.
+
+MATVEC - Master process:
+  Normal end of execution.
+
+17 May 2020 07:48:14 PM
