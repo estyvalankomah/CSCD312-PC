@@ -1,0 +1,64 @@
+20 June 2020 07:52:09 PM
+
+MONTE_CARLO - Master process:
+  C version
+  An MPI example program.
+  Estimate pi by the Monte Carlo method, using MPI.
+
+  Compiled on Jun 20 2020 at 19:52:02.
+
+  The number of processes is 5.
+
+  Points in the unit square will be tested
+  to see if they lie in the unit quarter circle.
+
+  The method will continue to improve the estimate until:
+  PI is computed to within a tolerance = 0.000200,
+  or the number of points examined reaches 1000000.
+  Process 0 is active.
+  Process 4 is active.
+  Process 1 is active.
+  Process 2 is active.
+  Process 3 is active.
+pi =  3.15200000000000013500
+pi =  3.16299999999999981171
+pi =  3.16666666666666651864
+pi =  3.16800000000000014921
+pi =  3.17119999999999979678
+pi =  3.15666666666666673180
+pi =  3.16085714285714303173
+pi =  3.15700000000000002842
+pi =  3.15733333333333332504
+pi =  3.15660000000000007248
+pi =  3.15345454545454551010
+pi =  3.15850000000000008527
+pi =  3.15661538461538482281
+pi =  3.15771428571428591781
+pi =  3.15839999999999987423
+pi =  3.15099999999999980105
+pi =  3.15023529411764702246
+pi =  3.14611111111111130256
+pi =  3.14326315789473698104
+pi =  3.14340000000000019398
+pi =  3.14638095238095250039
+pi =  3.14618181818181819054
+pi =  3.14643478260869580154
+pi =  3.14633333333333320425
+pi =  3.14607999999999998764
+pi =  3.14076923076923097966
+pi =  3.14066666666666671759
+pi =  3.14264285714285707130
+pi =  3.14241379310344814968
+pi =  3.14173333333333326678
+
+points: 60000
+in: 47126, out: 12874
+
+  Elapsed wallclock time = 2.16315 seconds.
+
+MONTE_CARLO - Master process:
+  Normal end of execution.
+
+20 June 2020 07:52:11 PM
+
+tolerance = 0.00002 with 5 processes
